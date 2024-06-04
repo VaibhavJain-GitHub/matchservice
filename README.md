@@ -32,5 +32,5 @@ The Match Service is a microservice that manages cricket match data. It provides
 ### Installation Steps
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/matchservice.git
-   cd match-service
+   git clone https://github.com/VaibhavJain-GitHub/matchservice
+   cd matchservice-main

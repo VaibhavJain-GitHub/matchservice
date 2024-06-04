@@ -6,13 +6,6 @@ The Match Service is a microservice that manages cricket match data. It provides
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Setup and Installation](#setup-and-installation)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Running Tests](#running-tests)
-- [Error Handling](#error-handling)
-- [Swagger Documentation](#swagger-documentation)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 - CRUD operations for cricket matches

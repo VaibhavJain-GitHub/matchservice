@@ -43,6 +43,7 @@ public class MatchServiceImpl implements MatchService {
     public MatchResponseDTO updateMatch(Long matchId, MatchRequestDTO matchRequestDTO) {
         Match match = matchRepository.findById(matchId).orElseThrow(() -> new MatchNotFoundException("Match not found with ID: " + matchId));
         match.setTeam1(matchRequestDTO.getTeam1());
+        log.info("Second Commit");
         log.info("Initial Commit");
         match.setTeam2(matchRequestDTO.getTeam2());
         match.setVenue(matchRequestDTO.getVenue());

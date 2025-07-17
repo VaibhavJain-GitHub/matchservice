@@ -28,14 +28,18 @@ public class MatchController {
     @Operation(summary = "Get match by ID")
     @GetMapping("/{matchId}")
     public ResponseEntity<MatchResponseDTO> getMatchById(@PathVariable Long matchId) {
+        log.info("Initial Commit");
         MatchResponseDTO match = matchService.getMatchById(matchId);
+        log.info("Second Commit");
         return ResponseEntity.ok(match);
     }
 
     @Operation(summary = "Create a new match")
     @PostMapping("/")
     public ResponseEntity<MatchResponseDTO> createMatch(@RequestBody MatchRequestDTO matchRequestDTO) {
+        log.info("Initial Commit");
         MatchResponseDTO createdMatch = matchService.createMatch(matchRequestDTO);
+        log.info("Second Commit");
         return ResponseEntity.status(201).body(createdMatch);
     }
 
@@ -43,6 +47,7 @@ public class MatchController {
     @PutMapping("/{matchId}")
     public ResponseEntity<MatchResponseDTO> updateMatch(@PathVariable Long matchId, @RequestBody MatchRequestDTO matchRequestDTO) {
         MatchResponseDTO updatedMatch = matchService.updateMatch(matchId, matchRequestDTO);
+        log.info("Second Commit");
         return ResponseEntity.ok(updatedMatch);
     }
 

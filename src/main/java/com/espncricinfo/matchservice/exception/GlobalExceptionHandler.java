@@ -29,6 +29,8 @@ public class GlobalExceptionHandler {
             String fieldName = ((FieldError) error).getField();
             log.info("Commit from main");
             log.info("Commit from main after merge");
+            log.info("Commit from main after merge-1");
+            log.info("Commit from main after merge-1");
             String errorMessage = error.getDefaultMessage();
             errors.put(fieldName, errorMessage);
         });

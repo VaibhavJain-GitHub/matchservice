@@ -46,8 +46,6 @@ public class MatchServiceImpl implements MatchService {
     public MatchResponseDTO updateMatch(Long matchId, MatchRequestDTO matchRequestDTO) {
         Match match = matchRepository.findById(matchId).orElseThrow(() -> new MatchNotFoundException("Match not found with ID: " + matchId));
         match.setTeam1(matchRequestDTO.getTeam1());
-        log.info("Second Commit");
-        log.info("Initial Commit");
         log.info("Commit from main");
         log.info("Commit from main after merge");
         match.setTeam2(matchRequestDTO.getTeam2());
@@ -60,7 +58,6 @@ public class MatchServiceImpl implements MatchService {
         match.setFormat(matchRequestDTO.getFormat());
         Match updatedMatch = matchRepository.save(match);
         return convertToResponseDTO(updatedMatch);
-        log.info("Initial Commit");
     }
 
     @Override

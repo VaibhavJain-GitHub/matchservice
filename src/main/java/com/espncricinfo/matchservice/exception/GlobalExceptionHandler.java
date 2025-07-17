@@ -17,7 +17,6 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Map<String, String>> handleMatchNotFoundException(MatchNotFoundException ex) {
         Map<String, String> response = new HashMap<>();
         response.put("error", ex.getMessage());
-        log.info("Second Commit");
         log.info("Commit from main after merge");
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }

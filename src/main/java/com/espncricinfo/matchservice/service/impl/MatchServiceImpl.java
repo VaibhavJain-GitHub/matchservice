@@ -37,6 +37,7 @@ public class MatchServiceImpl implements MatchService {
     public MatchResponseDTO createMatch(MatchRequestDTO matchRequestDTO) {
         Match match = convertToEntity(matchRequestDTO);
         log.info("Commit from main");
+        log.info("Commit from main after merge");
         Match savedMatch = matchRepository.save(match);
         return convertToResponseDTO(savedMatch);
     }
@@ -48,6 +49,7 @@ public class MatchServiceImpl implements MatchService {
         log.info("Second Commit");
         log.info("Initial Commit");
         log.info("Commit from main");
+        log.info("Commit from main after merge");
         match.setTeam2(matchRequestDTO.getTeam2());
         match.setVenue(matchRequestDTO.getVenue());
         match.setDate(matchRequestDTO.getDate());
@@ -64,6 +66,7 @@ public class MatchServiceImpl implements MatchService {
     @Override
     public boolean deleteMatch(Long matchId) {
         if (!matchRepository.existsById(matchId)) {
+            log.info("Commit from main after merge");
             throw new MatchNotFoundException("Match not found with ID: " + matchId);
         }
         matchRepository.deleteById(matchId);
@@ -86,6 +89,7 @@ public class MatchServiceImpl implements MatchService {
     }
 
     private Match convertToEntity(MatchRequestDTO matchRequestDTO) {
+        log.info("Commit from main after merge");
         return new Match(
                 null,
                 matchRequestDTO.getTeam1(),

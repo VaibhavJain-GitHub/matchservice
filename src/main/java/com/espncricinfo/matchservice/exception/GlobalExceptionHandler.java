@@ -18,6 +18,7 @@ public class GlobalExceptionHandler {
         Map<String, String> response = new HashMap<>();
         response.put("error", ex.getMessage());
         log.info("Second Commit");
+        log.info("Commit from main after merge");
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
 
@@ -27,6 +28,7 @@ public class GlobalExceptionHandler {
         ex.getBindingResult().getAllErrors().forEach(error -> {
             String fieldName = ((FieldError) error).getField();
             log.info("Commit from main");
+            log.info("Commit from main after merge");
             String errorMessage = error.getDefaultMessage();
             errors.put(fieldName, errorMessage);
         });

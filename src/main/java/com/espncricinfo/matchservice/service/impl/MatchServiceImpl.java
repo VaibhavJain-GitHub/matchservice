@@ -29,12 +29,14 @@ public class MatchServiceImpl implements MatchService {
     @Override
     public MatchResponseDTO getMatchById(Long matchId) {
         Match match = matchRepository.findById(matchId).orElseThrow(() -> new MatchNotFoundException("Match not found with ID: " + matchId));
+        log.info("Commit from main");
         return convertToResponseDTO(match);
     }
 
     @Override
     public MatchResponseDTO createMatch(MatchRequestDTO matchRequestDTO) {
         Match match = convertToEntity(matchRequestDTO);
+        log.info("Commit from main");
         Match savedMatch = matchRepository.save(match);
         return convertToResponseDTO(savedMatch);
     }
@@ -45,6 +47,7 @@ public class MatchServiceImpl implements MatchService {
         match.setTeam1(matchRequestDTO.getTeam1());
         log.info("Second Commit");
         log.info("Initial Commit");
+        log.info("Commit from main");
         match.setTeam2(matchRequestDTO.getTeam2());
         match.setVenue(matchRequestDTO.getVenue());
         match.setDate(matchRequestDTO.getDate());
